@@ -46,6 +46,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:19006',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
+
+
 ROOT_URLCONF = 'TravelUp.urls'
 
 TEMPLATES = [
@@ -112,10 +115,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mysite/static'),
-]
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
