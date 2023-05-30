@@ -12,5 +12,5 @@ class TourSerializer(serializers.ModelSerializer):
 class InformerToursSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tours
-        fields = ('title', 'description', 'vip', 'category', 'price', 'image')
+        fields = ('id', 'title', 'description', 'vip', 'category', 'price', 'image')
         depth = 2
