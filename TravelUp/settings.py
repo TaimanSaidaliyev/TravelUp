@@ -29,7 +29,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-    'djoser'
+    'djoser',
+    'services',
+    'locations',
+    'agent',
+    'regions',
+    'uploadImages'
 ]
 
 MIDDLEWARE = [

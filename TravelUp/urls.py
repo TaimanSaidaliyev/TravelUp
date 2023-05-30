@@ -7,7 +7,6 @@ from authorization.views import GetToken
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tours/', include('tours.urls')),
-    path(r'^auth/', include('djoser.urls')),
     path('check_token/', GetToken.as_view()),
-    re_path(r'^auth/', include('djoser.urls.authtoken')),
+    path('auth/', include('djoser.urls.authtoken')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
