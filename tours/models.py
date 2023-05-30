@@ -18,6 +18,7 @@ class Tours(models.Model):
     count_days = models.IntegerField(blank=True, verbose_name='Количество дней')
     count_people = models.IntegerField(blank=True, verbose_name='Максимальное количество туристов')
     description = models.TextField(blank=True, max_length=500, verbose_name='Описание')
+    price = models.FloatField(blank=True, verbose_name='Цена тура')
     image = models.ImageField(upload_to='img/%Y/%m/%d', verbose_name='Изображение', blank=True)
     included_in_price = models.ManyToManyField(Services, blank=True, verbose_name='Входит в стоимость', related_name='services_included_in_price')
     not_included_price = models.ManyToManyField(Services, blank=True, verbose_name='Не входит в стоимость', related_name='services_not_included_in_price')
