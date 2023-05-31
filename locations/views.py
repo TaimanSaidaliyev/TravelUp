@@ -2,12 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView, Response
 from .models import *
 from .serializers import *
-
-
-def if_empty(value, secondary):
-    if value == None:
-        value = secondary
-        return value
+from utils.utils import if_empty
 
 
 class LocationInfo(APIView):
