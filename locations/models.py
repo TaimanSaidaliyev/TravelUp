@@ -5,6 +5,7 @@ from regions.models import Regions
 class Locations(models.Model):
     title = models.CharField(max_length=100, blank=True, verbose_name='Название')
     category = models.ManyToManyField('LocationCategory', blank=True, verbose_name='Категория')
+    short_description = models.CharField(max_length=100, blank=True, verbose_name='Краткое описание')
     description = models.TextField(blank=True, verbose_name='Описание')
     attraction = models.ManyToManyField('Attractions', blank=True, verbose_name='Достопримечательности')
     region = models.ForeignKey(Regions, blank=True, on_delete=models.CASCADE, verbose_name='Регион')
@@ -13,6 +14,7 @@ class Locations(models.Model):
     image = models.ImageField(upload_to='media/locations/%Y/%m/%d', verbose_name='Изображение', blank=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, blank=True, verbose_name='Дата обновления')
+    priority = models.BooleanField(default=False, verbose_name='Приоритетная')
 
     class Meta:
         verbose_name = 'Локации'
